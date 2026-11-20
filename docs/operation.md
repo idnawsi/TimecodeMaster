@@ -68,6 +68,10 @@ Cameras record the LTC signal through their audio path, and the delay differs be
 
 Leaving jam-sync mode with a LEVEL long press during `JSRC` stops the search. The jack is both the output and the input, so do not leave the cable to a camera connected while searching; no LTC is output until the unit has locked or you leave the mode.
 
+## External microphone
+
+An external microphone can be connected to the microphone jack (U13). It must be mono: use a mono 3.5 mm plug, because a stereo (TRS) microphone is not supported. A mechanical switch on the board (S1) selects the external microphone. The microphone path is analogue only, and the firmware does not use it.
+
 ## Battery and charging
 
 - Charging starts when USB is connected (up to 1 A). The bi-colour LED on the board shows charging and standby.

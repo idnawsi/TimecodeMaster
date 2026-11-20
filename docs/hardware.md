@@ -26,7 +26,7 @@ This document describes the circuit in `hardware/kicad/main-board` (KiCad 9, tit
 
 **USB input.** J1 is a power-only USB-C receptacle. R2 and R4 (5.1 kOhm) on CC1 and CC2 identify the unit as a sink. U2 (SMF05CT1G) clamps transients.
 
-**Charging.** U5 (TP4056) charges the Li-ion cell at up to 1 A. The programming resistor R10 is 1.2 kOhm, which sets 1 A (I = 1200 / R in kOhm). The charge and standby outputs drive the two elements of D1 through R8 and R5 (1 kOhm each). The charge output also goes to GPIO36 of the LTC device, with R22 (100 kOhm) as pull-up, so the firmware can read "charging" (low). The cell is protected by U7 (DW01A) and U6 (FS8205A) in its negative lead.
+**Charging.** U5 (TP4056) charges the Li-ion cell at up to 1 A. The programming resistor R10 is 1.2 kOhm, which sets 1 A (I = 1200 / R in kOhm). The charge and standby outputs drive the two elements of D1 through R8 and R5 (1 kOhm each). The charge output also goes to GPIO36 of the LTC device, with two pull-ups, R22 (100 kOhm, to the module supply) and R9 (20 kOhm, to 3.3 V), so the firmware can read "charging" (low). The cell is protected by U7 (DW01A) and U6 (FS8205A) in its negative lead.
 
 **Source selection.** D2 (SS14) feeds the rail `/VCCSEL` from the 5 V input. Q4 (P-channel, drain on the battery, gate pulled to 5 V through R23) connects the battery to the same rail through its body diode when USB is absent and turns off when USB is present. The higher source wins.
 
@@ -64,7 +64,7 @@ The input path (jam sync): with GPIO27 high, the jack is routed through C4 (100 
 
 **Jack protection.** D4 (PESD5V0S1BA, a bidirectional 5 V ESD diode in SOD-323) connects the tip of the LTC I/O jack to ground, directly on the jack net. R48 (1 kOhm) sits between that net and C7, so everything behind it, the CD4066 switches and the 74HC14 input, sees only the current that gets past the diode. The signal is AC around 0 V, which is why the diode is bidirectional. R48 is in series with both the output and the jam-sync input. The ring contact of U14 and the microphone jack U13 have no protection.
 
-U14 is a PJ-342B 3.5 mm jack with a switched contact. S1 (a slide switch) connects the LTC I/O jack's second contact to the 4.7 kOhm network (R39, R43) on the microphone jack U13. The intended use of this switch is not described in the schematic. Confirm it against your build before documenting a wiring convention for camera cables.
+U14 is a PJ-342B 3.5 mm jack with a switched contact. S1 is a mechanical slide switch that selects the external microphone. The microphone jack U13 takes a mono external microphone only, on a mono 3.5 mm plug. In the schematic S1 connects the LTC I/O jack's second contact to the 4.7 kOhm network (R39, R43) on U13. This document does not yet say which position of S1 is which, or which conductor of the LTC jack carries the microphone; check both on your build before you wire a camera cable.
 
 The AO3407 transistors Q1 and Q2 act as inverters between the GPIO lines and two of the CD4066 control pins. Both have their source on the 3.3 V rail.
 
@@ -121,7 +121,7 @@ These are observations from reading the netlist, not confirmed faults.
 
 - The Utility wake divider (R45 / R46) gives 2.5 V from 5 V, which is close to the ESP32 input-high threshold (0.75 x VDD = 2.5 V). The LTC divider gives 3.3 V.
 - The netlist shows no pull-down on the drains of Q1 and Q2, which drive CD4066 control pins 6 and 5. When the transistor is off, that control pin has no defined level. Check the LINE/MIC selection and the jack direction on the bench in both states.
-- S1 and the R39 / R43 network on the microphone jack are not explained in the schematic.
+- The positions of S1 are not marked in the schematic, and the camera cable wiring for the external microphone (which conductor of the LTC jack carries it) is not documented.
 - Output levels. The divider (R13 and R15 15 kOhm, R16 1 kOhm) gives about 1.7 Vpp unloaded on LINE (source impedance about 7.7 kOhm) and about 0.1 Vpp on MIC (about 1 kOhm). R48 adds 1 kOhm in series on top of that, and the CD4066 on-resistance at 3.3 V is not included. On MIC that is roughly 1 to 3 dB less at the camera, depending on its input impedance. The level cannot be changed in firmware, because the DAC feeds the 74HC14 buffer, which restores a full swing. To raise the MIC level, increase R16 (2.2 kOhm gives about 6.6 dB more), lower R48, or raise the camera's gain. Measure the output at the camera.
 - The jack protection covers the LTC jack tip only. The ring contact (U14 pin 3, through S1) and the microphone jack U13 have no ESD diode. Rev 4.1 boards have none of the protection.
 - The BOM mixes 0402 and 0805 footprints for the 10 uF capacitors and two electrolytic footprints (C18 radial through-hole, C30 8x10 SMD). Check availability and heights against the enclosure.

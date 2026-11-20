@@ -128,6 +128,16 @@ The mounting pin is connected to ground. Each switch connects its line to ground
 | 4, 5 | Mic-Output (from U16 through R36 and C21) |
 | 3 | R39 (4.7 kOhm) |
 | 6 | R43 (4.7 kOhm) |
+
+Pins 3 and 6 are the ring and tip springs and pins 4 and 5 their normally closed switch contacts (so the on-board microphone is cut off when a plug goes in). R39 and R43 join the two springs into one mono node, which goes to S1 pin 3. Pins 2 and 7 are ground.
+
+### S1, mode switch for the ring of the LTC jack (SSSS811101)
+
+| Pin | Net |
+|---|---|
+| 2 (common) | U14 pin 3, the ring spring of the LTC jack |
+| 1 | LTC I/O tip net (U14 pin 6): ring carries a copy of the LTC signal |
+| 3 | Microphone node (R39 and R43): ring carries the microphone signal |
 | 2, 7 | GND |
 
 ### MK1, microphone capsule

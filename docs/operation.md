@@ -70,7 +70,9 @@ Leaving jam-sync mode with a LEVEL long press during `JSRC` stops the search. Th
 
 ## External microphone
 
-An external microphone can be connected to the microphone jack (U13). It must be mono: use a mono 3.5 mm plug, because a stereo (TRS) microphone is not supported. A mechanical switch on the board (S1) selects the external microphone. The microphone path is analogue only, and the firmware does not use it.
+The unit has an on-board microphone. Plugging an external microphone into the microphone jack (U13) replaces it automatically, because the jack's switch contacts disconnect the on-board one. The external microphone must be mono: use a mono 3.5 mm plug. No bias voltage is supplied, so a microphone that needs plug-in power will not work.
+
+The slide switch S1 sets what the ring of the LTC jack carries: the microphone signal, or a copy of the LTC signal. With the microphone selected, one stereo cable carries LTC on the tip and the microphone on the ring. Which direction of the slider is which is not marked in the schematic; check it on your unit. The microphone path is analogue only, and the firmware does not use it.
 
 ## Battery and charging
 

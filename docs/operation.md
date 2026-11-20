@@ -75,6 +75,7 @@ Leaving jam-sync mode with a LEVEL long press during `JSRC` stops the search. Th
 - During the first 10 s after power-up the battery reading is ignored, and while charging the reading is corrected by about 0.2 V.
 - The master page shows the battery level of every client.
 - A missing battery is detected, and the unit runs from USB.
+- Run time: with a 3000 mAh 18650 cell, a unit in lock mode (wireless off) runs for about 16 hours. That is the author's figure for the whole unit, not a measured table. It is an average draw of roughly 190 mA from the cell (3000 mAh over 16 h). With the radio on it will be shorter, and it has not been measured. For a long day, charge the cell fully, lock the units after the sync, or carry a USB power bank.
 
 ### Radio power save
 

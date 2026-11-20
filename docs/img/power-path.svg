@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 470" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13">
+<title>Power path</title>
+<rect width="980" height="470" fill="#ffffff"/>
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#374151"/></marker></defs>
+<rect x="15" y="30" width="150" height="60" rx="4" fill="#f3f4f6" stroke="#374151" stroke-width="1.5"/>
+<text x="90.0" y="52" text-anchor="middle" font-weight="600" fill="#111827">USB-C (J1)</text>
+<text x="90.0" y="72" text-anchor="middle" font-size="12" fill="#111827">5 V, CC pull-downs, TVS</text>
+<rect x="15" y="190" width="150" height="70" rx="4" fill="#f3f4f6" stroke="#374151" stroke-width="1.5"/>
+<text x="90.0" y="212" text-anchor="middle" font-weight="600" fill="#111827">TP4056 (U5)</text>
+<text x="90.0" y="232" text-anchor="middle" font-size="12" fill="#111827">1 A max, PROG 1.2k</text>
+<text x="90.0" y="249" text-anchor="middle" font-size="12" fill="#111827">CHRG to GPIO36</text>
+<rect x="15" y="320" width="150" height="80" rx="4" fill="#f3f4f6" stroke="#374151" stroke-width="1.5"/>
+<text x="90.0" y="342" text-anchor="middle" font-weight="600" fill="#111827">Li-ion cell (BT1)</text>
+<text x="90.0" y="362" text-anchor="middle" font-size="12" fill="#111827">DW01A + FS8205A</text>
+<text x="90.0" y="379" text-anchor="middle" font-size="12" fill="#111827">protection</text>
+<rect x="235" y="30" width="150" height="60" rx="4" fill="#f3f4f6" stroke="#374151" stroke-width="1.5"/>
+<text x="310.0" y="52" text-anchor="middle" font-weight="600" fill="#111827">D2 SS14</text>
+<text x="310.0" y="72" text-anchor="middle" font-size="12" fill="#111827">USB to rail</text>
+<rect x="235" y="320" width="150" height="60" rx="4" fill="#f3f4f6" stroke="#374151" stroke-width="1.5"/>
+<text x="310.0" y="342" text-anchor="middle" font-weight="600" fill="#111827">Q4 (AO3407)</text>
+<text x="310.0" y="362" text-anchor="middle" font-size="12" fill="#111827">battery to rail</text>
+<rect x="445" y="170" width="150" height="70" rx="4" fill="#f3f4f6" stroke="#374151" stroke-width="1.5"/>
+<text x="520.0" y="192" text-anchor="middle" font-weight="600" fill="#111827">/VCCSEL</text>
+<text x="520.0" y="212" text-anchor="middle" font-size="12" fill="#111827">rail before the switch</text>
+<rect x="445" y="30" width="150" height="60" rx="4" fill="#f3f4f6" stroke="#374151" stroke-width="1.5"/>
+<text x="520.0" y="52" text-anchor="middle" font-weight="600" fill="#111827">Q3 (AO3407)</text>
+<text x="520.0" y="72" text-anchor="middle" font-size="12" fill="#111827">SW1 pulls gate low</text>
+<rect x="655" y="30" width="150" height="70" rx="4" fill="#f3f4f6" stroke="#374151" stroke-width="1.5"/>
+<text x="730.0" y="52" text-anchor="middle" font-weight="600" fill="#111827">TPS63070 (U11)</text>
+<text x="730.0" y="72" text-anchor="middle" font-size="12" fill="#111827">L1 1.5 uH</text>
+<text x="730.0" y="89" text-anchor="middle" font-size="12" fill="#111827">JP1 = power-save mode</text>
+<rect x="655" y="170" width="150" height="70" rx="4" fill="#f3f4f6" stroke="#374151" stroke-width="1.5"/>
+<text x="730.0" y="192" text-anchor="middle" font-weight="600" fill="#111827">+3.3 V</text>
+<text x="730.0" y="212" text-anchor="middle" font-size="12" fill="#111827">to both ESP32 modules</text>
+<rect x="655" y="300" width="150" height="100" rx="4" fill="#f3f4f6" stroke="#374151" stroke-width="1.5"/>
+<text x="730.0" y="322" text-anchor="middle" font-weight="600" fill="#111827">Other consumers</text>
+<text x="730.0" y="342" text-anchor="middle" font-size="11" fill="#111827">Si5351, TCXO: R11 10R + C9</text>
+<text x="730.0" y="359" text-anchor="middle" font-size="11" fill="#111827">RTC, OLED, ADS1115, logic</text>
+<rect x="835" y="170" width="130" height="70" rx="4" fill="#f3f4f6" stroke="#374151" stroke-width="1.5"/>
+<text x="900.0" y="192" text-anchor="middle" font-weight="600" fill="#111827">Analog rail</text>
+<text x="900.0" y="212" text-anchor="middle" font-size="11" fill="#111827">U8 LDO, FB1,</text>
+<text x="900.0" y="229" text-anchor="middle" font-size="11" fill="#111827">R21, 1000 uF</text>
+<path d="M90 90 L90 190" fill="none" stroke="#374151" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M90 260 L90 320" fill="none" stroke="#374151" stroke-width="1.5" marker-end="url(#a)" marker-start="url(#a)"/>
+<path d="M165 60 L235 60" fill="none" stroke="#374151" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M385 60 L445 170 L445 170" fill="none" stroke="#374151" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M165 360 L235 350" fill="none" stroke="#374151" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M385 350 L520 350 L520 240" fill="none" stroke="#374151" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M520 170 L520 90" fill="none" stroke="#374151" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M595 60 L655 60" fill="none" stroke="#374151" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M730 100 L730 170" fill="none" stroke="#374151" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M805 205 L835 205" fill="none" stroke="#374151" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M730 240 L730 300" fill="none" stroke="#374151" stroke-width="1.5" marker-end="url(#a)"/>
+<text x="15" y="432" text-anchor="start" font-size="11" fill="#374151" font-weight="normal">Battery sense: BATT / 2 into ADS1115 A0 (R40, R41)</text>
+<text x="15" y="452" text-anchor="start" font-size="11" fill="#374151" font-weight="normal">USB detect: 5 V divided onto GPIO39 (wake from deep sleep)</text>
+</svg>

@@ -1,0 +1,64 @@
+Qty,References,Value,Footprint,Function
+1,U1,CD4066BM,SO-14_3.9x8.65mm_P1.27mm,"Quad analog switch (LINE/MIC level, LTC jack direction)"
+1,U2,SMF05CT1G,SOT65P210X110-6N,USB ESD / TVS array
+1,U3,DS3231M,SOIC-16W_7.5x10.3mm_P1.27mm,Real-time clock with integrated TCXO
+1,U4,74HC14,SOIC-14_3.9x8.7mm_P1.27mm,"Hex Schmitt-trigger inverter (LTC output buffer, input conditioning)"
+1,U5,TP4056-42-ESOP8,SOIC-8-1EP_3.9x4.9mm_P1.27mm_EP2.41x3.3mm_ThermalVias,"Li-ion linear charger, 1 A max"
+1,U6,FS8205A-SOT23,TSOT-23-6_HandSoldering,Dual N-channel MOSFET (battery protection switch)
+1,U7,DW01A,SOT-23-6,Li-ion protection controller
+1,U8,RT9013-33GB,SOT94P279X129-5N,"3.3 V LDO (500 mA), analog rail"
+1,U10,LTC-DEVICE,ESP32-WROOM-32E,ESP32-WROOM-32E module: LTC device
+1,U11,TPS63070RNMR,VREG_TPS63070RNMR,"Buck-boost converter, 3.3 V system rail"
+1,U12,UTILITY-DEVICE,ESP32-WROOM-32E,ESP32-WROOM-32E module: Utility device
+2,"U13, U14",PJ-342B,PJ-342B,"3.5 mm jacks: U13 microphone output, U14 LTC I/O"
+1,U15,ADS1115IDGS,TSSOP-10_3x3mm_P0.5mm,16-bit I2C ADC (battery voltage)
+1,U16,OPA365xxDBV,SOT-23-5,"Single rail-to-rail op-amp, 2.2 to 5.5 V (microphone preamp)"
+1,X1,25MHZ 0.5ppm TCXO,TSX-3225,25 MHz 0.5 ppm TCXO
+1,Y1,Si5351A-B-GT,MSOP-10_3x3mm_P0.5mm,I2C programmable clock generator
+4,Q1-Q4,AO3407,SOT-23,"P-channel MOSFET, SOT-23 (Q1, Q2 level control; Q3 power switch; Q4 battery path)"
+1,D1,OSTB0805C1C-A,LEDSC200X125X110-4N,Bi-colour LED (charge / standby)
+1,D2,SS14,D_SMA,Schottky diode (USB to supply OR-ing)
+1,D3,Blue_Led,LED_0805_2012Metric,Blue status LED (Utility GPIO2)
+1,D4,PESD5V0S1BA,D_SOD-323,Bidirectional ESD diode on the LTC jack tip (R48 limits current behind it)
+1,J1,USB_C_Receptacle_PowerOnly_6P,USB_C_Receptacle_HRO_TYPE-C-31-M-17,"USB-C receptacle, power only"
+1,J2,S8421-45R,2 Pad,RTC backup battery pads
+1,J3,SSD1306 oled,4 Pad,"OLED connector (SSD1306, I2C)"
+1,J4,Conn_01x05_MountingPin,JST_PH_S5B-PH-SM4-TB_1x05-1MP_P2.00mm_Horizontal,Button board connector
+1,S1,SSSS811101,SW_SSSS811101,Slide switch (jack routing)
+1,L1,1.5uH,L_7.3x7.3_H4.5,1.5 uH power inductor
+13,"C1, C3, C4, C6, C10, C13-C15, C19, C22, C25-C27",100nF,C_0402_1005Metric_Pad0.74x0.62mm_HandSolder,Capacitor
+5,"C2, C5, C9, C12, C16",10uF,C_0805_2012Metric,Capacitor
+1,C7,10uF,C_0805_2012Metric_Pad1.18x1.45mm_HandSolder,Capacitor
+1,C8,10nF,C_0805_2012Metric,Capacitor
+3,"C11, C29, C31",22uF,C_0805_2012Metric_Pad1.18x1.45mm_HandSolder,Capacitor
+1,C17,10uF,C_0402_1005Metric_Pad0.74x0.62mm_HandSolder,Capacitor
+2,"C18, C21",10uf,C_Radial_D4.0mm_H5.0mm_P1.50mm,Capacitor
+1,C20,10pf,C_0402_1005Metric_Pad0.74x0.62mm_HandSolder,Capacitor
+2,"C23, C24",100uF,CP_EIA-3528-21_Kemet-B_HandSolder,Capacitor
+1,C28,1uF,C_0402_1005Metric_Pad0.74x0.62mm_HandSolder,Capacitor
+1,C30,1000uF,CP_Elec_8x10,Capacitor
+8,"R1, R3, R25, R26, R39, R43, R44, R47",4.7k,R_0402_1005Metric_Pad0.72x0.64mm_HandSolder,Resistor
+2,"R2, R4",5K1,R_0402_1005Metric_Pad0.72x0.64mm_HandSolder,Resistor
+5,"R5, R8, R14, R16, R48",1K,R_0402_1005Metric_Pad0.72x0.64mm_HandSolder,Resistor
+6,"R6, R27, R35, R37, R40, R41",100k,R_0402_1005Metric_Pad0.72x0.64mm_HandSolder,Resistor
+1,R7,68K,R_0402_1005Metric_Pad0.72x0.64mm_HandSolder,Resistor
+10,"R9, R18, R19, R23, R28, R30, R31, R33, R45, R46",20k,R_0402_1005Metric_Pad0.72x0.64mm_HandSolder,Resistor
+1,R10,1.2K,R_0402_1005Metric_Pad0.72x0.64mm_HandSolder,Resistor
+1,R11,10R,R_0805_2012Metric,Resistor
+1,R12,100R,R_0805_2012Metric,Resistor
+2,"R13, R15",15K,R_0402_1005Metric_Pad0.72x0.64mm_HandSolder,Resistor
+2,"R17, R34",10k,R_0402_1005Metric_Pad0.72x0.64mm_HandSolder,Resistor
+1,R20,47K,R_0402_1005Metric_Pad0.72x0.64mm_HandSolder,Resistor
+1,R21,20R,R_0402_1005Metric_Pad0.72x0.64mm_HandSolder,Resistor
+1,R22,100K,R_0402_1005Metric,Resistor
+2,"R24, R42",10k,R_0402_1005Metric,Resistor
+1,R29,150k,R_0402_1005Metric_Pad0.72x0.64mm_HandSolder,Resistor
+1,R32,470k,R_0402_1005Metric_Pad0.72x0.64mm_HandSolder,Resistor
+1,R36,100R,R_0402_1005Metric_Pad0.72x0.64mm_HandSolder,Resistor
+1,R38,47R,R_0402_1005Metric_Pad0.72x0.64mm_HandSolder,Resistor
+1,BT1,Battery_Cell,2 Pad,Li-ion cell
+3,FB1-FB3,600Ohm/1Mhz,L_0603_1608Metric_Pad1.05x0.95mm_HandSolder,Ferrite bead
+1,JP1,SolderJumper_2_Open,SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm,Solder jumper: converter power-save mode
+1,MK1,DR1409B,3 Pad,Electret microphone
+1,SW1,SW_SPST,2 Pad,Main power switch pads
+1,SW2,OTA-BUTTON,SMD-SIDE SWITCH,OTA button

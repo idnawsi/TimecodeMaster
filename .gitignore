@@ -1,0 +1,32 @@
+# Arduino / ESP32 build output
+build/
+*.elf
+*.map
+*.bin
+
+# Python
+__pycache__/
+*.py[cod]
+dist/
+
+# KiCad
+*-backups/
+*.lck
+fp-info-cache
+_autosave-*
+*.kicad_prl
+
+# Local application settings and projects
+ltc_sync_settings.json
+ltc_analyzer_settings.json
+*.ltcproj
+*.fcpxml
+ltc_log.txt
+
+# Editors and OS
+.vscode/
+.idea/
+.claude/
+Thumbs.db
+.DS_Store
+desktop.ini

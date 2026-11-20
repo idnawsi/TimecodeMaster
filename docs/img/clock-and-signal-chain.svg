@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 330" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13">
+<title>LTC clock and signal chain</title>
+<rect width="980" height="330" fill="#ffffff"/>
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#374151"/></marker></defs>
+<rect x="15" y="70" width="170" height="90" rx="4" fill="#fff7ed" stroke="#9a3412" stroke-width="1.5"/>
+<text x="100.0" y="92" text-anchor="middle" font-weight="600" fill="#111827">TCXO (X1)</text>
+<text x="100.0" y="112" text-anchor="middle" font-size="12" fill="#111827">25 MHz, 0.5 ppm</text>
+<text x="100.0" y="129" text-anchor="middle" font-size="12" fill="#111827">AC-coupled to XA (C8)</text>
+<rect x="205" y="70" width="170" height="90" rx="4" fill="#fff7ed" stroke="#9a3412" stroke-width="1.5"/>
+<text x="290.0" y="92" text-anchor="middle" font-weight="600" fill="#111827">Si5351 PLL A</text>
+<text x="290.0" y="112" text-anchor="middle" font-size="12" fill="#111827">25 MHz x 30.72</text>
+<text x="290.0" y="129" text-anchor="middle" font-size="12" fill="#111827">= 768.000000 MHz</text>
+<rect x="395" y="70" width="170" height="90" rx="4" fill="#fff7ed" stroke="#9a3412" stroke-width="1.5"/>
+<text x="480.0" y="92" text-anchor="middle" font-weight="600" fill="#111827">Multisynth 0</text>
+<text x="480.0" y="112" text-anchor="middle" font-size="12" fill="#111827">1000 for integer rates</text>
+<text x="480.0" y="129" text-anchor="middle" font-size="12" fill="#111827">1001 for NTSC rates</text>
+<text x="480.0" y="146" text-anchor="middle" font-size="12" fill="#111827">then R divider 16</text>
+<rect x="585" y="70" width="170" height="90" rx="4" fill="#f3f4f6" stroke="#374151" stroke-width="1.5"/>
+<text x="670.0" y="92" text-anchor="middle" font-weight="600" fill="#111827">LTC ESP32</text>
+<text x="670.0" y="112" text-anchor="middle" font-size="12" fill="#111827">posedge interrupt on</text>
+<text x="670.0" y="129" text-anchor="middle" font-size="12" fill="#111827">GPIO34, IRAM, level 3</text>
+<text x="670.0" y="146" text-anchor="middle" font-size="12" fill="#111827">one DAC sample per edge</text>
+<rect x="775" y="70" width="190" height="90" rx="4" fill="#f3f4f6" stroke="#374151" stroke-width="1.5"/>
+<text x="870.0" y="92" text-anchor="middle" font-weight="600" fill="#111827">DAC, GPIO25</text>
+<text x="870.0" y="112" text-anchor="middle" font-size="12" fill="#111827">0 / 255 square wave</text>
+<text x="870.0" y="129" text-anchor="middle" font-size="12" fill="#111827">biphase-mark bits</text>
+<path d="M185 115.0 L205 115.0" fill="none" stroke="#374151" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M375 115.0 L395 115.0" fill="none" stroke="#374151" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M565 115.0 L585 115.0" fill="none" stroke="#374151" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M775 115.0 L775 115.0" fill="none" stroke="#374151" stroke-width="1.5" marker-end="url(#a)"/>
+<text x="290" y="176" text-anchor="middle" font-size="11" fill="#374151" font-weight="normal">set once at start-up</text>
+<text x="480" y="176" text-anchor="middle" font-size="11" fill="#374151" font-weight="normal">only this changes with FPS</text>
+<text x="670" y="176" text-anchor="middle" font-size="11" fill="#374151" font-weight="normal">CLK0: 48000.000 or 47952.048 Hz</text>
+<rect x="15" y="215" width="170" height="70" rx="4" fill="#f3f4f6" stroke="#374151" stroke-width="1.5"/>
+<text x="100.0" y="237" text-anchor="middle" font-weight="600" fill="#111827">Buffer</text>
+<text x="100.0" y="257" text-anchor="middle" font-size="12" fill="#111827">2 x inverter (U4)</text>
+<rect x="205" y="215" width="170" height="70" rx="4" fill="#f3f4f6" stroke="#374151" stroke-width="1.5"/>
+<text x="290.0" y="237" text-anchor="middle" font-weight="600" fill="#111827">LINE / MIC divider</text>
+<text x="290.0" y="257" text-anchor="middle" font-size="12" fill="#111827">C28, R13, R15, R16</text>
+<text x="290.0" y="274" text-anchor="middle" font-size="12" fill="#111827">CD4066 (U1), GPIO21</text>
+<rect x="395" y="215" width="170" height="70" rx="4" fill="#f3f4f6" stroke="#374151" stroke-width="1.5"/>
+<text x="480.0" y="237" text-anchor="middle" font-weight="600" fill="#111827">Direction switch</text>
+<text x="480.0" y="257" text-anchor="middle" font-size="12" fill="#111827">CD4066 (U1), GPIO27</text>
+<text x="480.0" y="274" text-anchor="middle" font-size="12" fill="#111827">C7</text>
+<rect x="585" y="215" width="170" height="70" rx="4" fill="#ecfdf5" stroke="#047857" stroke-width="1.5"/>
+<text x="670.0" y="237" text-anchor="middle" font-weight="600" fill="#111827">LTC I/O</text>
+<text x="670.0" y="257" text-anchor="middle" font-size="12" fill="#111827">3.5 mm jack U14</text>
+<path d="M870 160 L870 190 L100 190 L100 215" fill="none" stroke="#374151" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M185 250 L205 250" fill="none" stroke="#374151" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M375 250 L395 250" fill="none" stroke="#374151" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M565 250 L585 250" fill="none" stroke="#374151" stroke-width="1.5" marker-end="url(#a)"/>
+<text x="490" y="308" text-anchor="middle" font-size="11" fill="#374151" font-weight="normal">Output stage, left to right. The jack also feeds the jam-sync input (U4 stage into GPIO35) when GPIO27 is high.</text>
+</svg>
